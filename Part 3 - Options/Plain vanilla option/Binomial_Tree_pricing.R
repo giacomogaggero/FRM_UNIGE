@@ -44,7 +44,7 @@ for (k in 1:NStep) {
   for (j in seq(k-1,0,-1)) {
     for (i in 0:j) {
       AssetPrice=S*u^i*d^(j-i);
-      OptionValue[i+1]=max((p*OptionValue[i+2]+(1-p)*OptionValue[i+1]),z*(AssetPrice-X))*exp(-r*DeltaT);
+      OptionValue[i+1]=max((p*OptionValue[i+2]+(1-p)*OptionValue[i+1])*exp(-r*DeltaT),z*(AssetPrice-X));
     }
   }
   CRR_AM_OptionPrice_Array[k]=OptionValue[1]
@@ -71,7 +71,7 @@ for (k in 1:NStep) {
   for (j in seq(k-1,0,-1)) {
     for (i in 0:j) {
       AssetPrice=S*u^i*d^(j-i);
-      OptionValue[i+1]=max((p*OptionValue[i+2]+(1-p)*OptionValue[i+1]),z*(AssetPrice-X))*exp(-r*DeltaT);
+      OptionValue[i+1]=max((p*OptionValue[i+2]+(1-p)*OptionValue[i+1])*exp(-r*DeltaT),z*(AssetPrice-X));
     }
   }
   LR_AM_OptionPrice_Array[k]=OptionValue[1]
